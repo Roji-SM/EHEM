@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Seleira 💗</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, sans-serif;
+}
+
+body{
+background: linear-gradient(135deg,#ffd6e7,#e6d6ff);
+height:100vh;
+overflow:hidden;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.page{
+display:none;
+text-align:center;
+padding:20px;
+max-width:700px;
+}
+
+.active{
+display:block;
+animation:fadeIn 1s;
+}
+
+h1{
+font-size:2.5rem;
+margin-bottom:20px;
+}
+
+p{
+font-size:1.2rem;
+margin-bottom:20px;
+}
+
+button{
+padding:15px 25px;
+border:none;
+border-radius:25px;
+font-size:1rem;
+cursor:pointer;
+margin:10px;
+transition:0.3s;
+}
+
+.nextBtn{
+background:#ff4f87;
+color:white;
+}
+
+.yesBtn{
+background:#4CAF50;
+color:white;
+}
+
+.noBtn{
+background:#ff4d4d;
+color:white;
+position:absolute;
+}
+
+.card{
+background:white;
+padding:20px;
+border-radius:20px;
+margin:10px;
+box-shadow:0 10px 20px rgba(0,0,0,0.1);
+}
+
+.gallery img{
+width:150px;
+height:150px;
+object-fit:cover;
+border-radius:20px;
+margin:10px;
+}
+
+@keyframes fadeIn{
+from{opacity:0;}
+to{opacity:1;}
+}
+</style>
+</head>
+<body>
+
+<audio autoplay loop>
+<source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<div id="page1" class="page active">
+<h1>Hi Seleira 🌷</h1>
+<p>I made something for you hehe</p>
+<button class="nextBtn" onclick="nextPage(2)">Open it 💌</button>
+</div>
+
+<div id="page2" class="page">
+<h1>Before anything...</h1>
+<p>You make my days brighter and lighter ☀️</p>
+<button class="nextBtn" onclick="nextPage(3)">Continue ✨</button>
+</div>
+
+<div id="page3" class="page">
+<h1>Reasons why I like you 💗</h1>
+
+<div class="card">You make me smile.</div>
+<div class="card">You're beautiful inside and out.</div>
+<div class="card">Talking to you feels peaceful.</div>
+<div class="card">You’re special to me.</div>
+
+<button class="nextBtn" onclick="nextPage(4)">Next 🌸</button>
+</div>
+
+<div id="page4" class="page">
+<h1>Our Photos 📸</h1>
+
+<div class="gallery">
+<img src="photo1.jpg">
+<img src="photo2.jpg">
+<img src="photo3.jpg">
+</div>
+
+<p>Every moment feels extra special.</p>
+
+<button class="nextBtn" onclick="nextPage(5)">Next 💕</button>
+</div>
+
+<div id="page5" class="page">
+<h1>A little confession...</h1>
+<p>
+I may not be perfect,  
+but if you let me,  
+I’d like to know you better,  
+make you smile more,  
+and be sincere with my intentions.
+</p>
+
+<button class="nextBtn" onclick="nextPage(6)">One last thing 👀</button>
+</div>
+
+<div id="page6" class="page">
+<h1>Seleira...</h1>
+<p>Can I court you? 💗</p>
+
+<button class="yesBtn" onclick="yesAnswer()">YES 💖</button>
+<button id="noBtn" class="noBtn" onmouseover="moveNo()">NO 😭</button>
+</div>
+
+<script>
+function nextPage(page){
+document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+document.getElementById('page'+page).classList.add('active');
+}
+
+function moveNo(){
+let btn = document.getElementById('noBtn');
+let x = Math.random() * (window.innerWidth - 100);
+let y = Math.random() * (window.innerHeight - 50);
+btn.style.left = x + "px";
+btn.style.top = y + "px";
+}
+
+function yesAnswer(){
+document.body.innerHTML = `
+<div style="text-align:center;">
+<h1>YAYYYYY 💖</h1>
+<p>Thank you for giving me a chance, Seleira 🌷</p>
+</div>
+`;
+}
+</script>
+
+</body>
+</html>
